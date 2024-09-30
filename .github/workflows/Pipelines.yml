@@ -46,6 +46,7 @@ jobs: # groups the jobs to be executed in this workflow
           path: app/build/reports/tests/testDebugUnitTest/
 
   androidTest:
+      name: 📱 Android Tests
       # Faster, but MacOS costs 8 ct/min instead of 0.8 ct/min of on Linux.
       # Unfortunately, `DataCapturingServiceTest.testDisconnectReconnect` fails on linux stack.
       # But as this is a public repository, Github Actions are currently free of charge.
@@ -79,7 +80,7 @@ jobs: # groups the jobs to be executed in this workflow
         - name: Connected tests
           uses: reactivecircus/android-emulator-runner@v2
           with:
-            api-level: 28
+            api-level: 29
             arch: x86_64
             disable-animations: true
             disk-size: 6000M
